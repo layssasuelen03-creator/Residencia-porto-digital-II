@@ -1,0 +1,609 @@
+/* reset */
+* { margin:0; padding:0; box-sizing:border-box; font-family: "Poppins", sans-serif; }
+html,body,#root { height:100%; }
+body { background:#1f1f1f; color:#111; }
+
+/* --- LAYOUT --- */
+.sidebar { width:250px; background:#0a0a0a; color:#fff; position:fixed; top:0; left:0; bottom:0; padding:28px 20px; display:flex; flex-direction:column; justify-content:space-between; }
+.logo-s { font-size:22px; font-weight:700; margin-bottom:18px; }
+.logo-s span { display:block; font-size:12px; font-weight:400; color:#bdbdbd; }
+.menu { display:flex; flex-direction:column; gap:17px; margin-top: -200px }
+.menu h2, .menu h2 { font-size:16px; color:#fff; margin-bottom:5px; font-weight:600; }
+.menu a { color:#cfcfcf; text-decoration:none; padding:10px; border-radius:8px; display:inline-block; font-weight:500; font-size: 16px; }
+.menu a.active, .menu a:hover { background:#222; color:#fff; }
+.menu a.active { box-shadow: none; text-shadow: none; }
+.sidebar-bottom { margin-top:12px; }
+.btn-sair { width:100%; padding:10px; border-radius:20px; background:#fff; color:#111; border:none; cursor:pointer; }
+
+
+/* --- LOGO IMAGE --- */
+.logo-s {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-s img {
+    max-width: 199px;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+.logo-s span {
+    font-size: 12px;
+    font-weight: 400;
+    color: #bdbdbd;
+}
+
+/* --- SIDEBAR MENU  --- */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 20px; 
+}
+
+.sidebar .logo-s {
+  margin-bottom: 10px; 
+}
+
+.sidebar nav {
+  margin-top: 10px; 
+}
+
+.sidebar h3 {
+  margin-top: 10px; 
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+/* Faz a sidebar se comportar como um container flex vertical */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.sidebar .menu {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Empurra o penúltimo link (Configurações) para o final */
+
+.sidebar .menu a[href*="configuracoes"] {
+  margin-top: auto;
+}
+
+
+.sidebar .menu .btn-sair {
+  margin-top: 10px;
+}
+
+
+/* --- CONFIGURAÇÕES LINK POSITIONING --- */
+.sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.configuracoes-link {
+    color: #cfcfcf;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.configuracoes-link.active, 
+.configuracoes-link:hover {
+    background: #222;
+    color: #fff;
+}
+
+
+/* REMOVER FUNDO PERMANENTE E MANTER APENAS HOVER/CLICK */
+.menu a.active {
+    background: transparent;
+    color: #cfcfcf;
+}
+
+.menu a.active:hover {
+    background: #222;
+    color: #fff;
+}
+
+/* --- MAIN CONTENT --- */
+.main-content { margin-left:250px; padding:30px 40px; min-height:100vh; background:#f3f3f3; }
+.page-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; }
+.page-header h1 { font-size:22px; color:#111; }
+.page-header .voltar { text-decoration:none; color:#111; margin-right:10px; font-size:20px; }
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.ft-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 30px;
+}
+
+.ft-header h1 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.back {
+  font-size: 28px;
+  color: #000;
+  text-decoration: none;
+}
+
+.ft-box {
+  background: #fff;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.ft-box h2 {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  font-size: 15px;
+  outline: none;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.row div {
+  flex: 1;
+}
+
+.select {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 15px;
+  background: #fff;
+}
+
+.btn-save {
+  width: 300px;
+  margin: 30px auto 0;
+  display: block;
+  padding: 14px;
+  background: #000;
+  color: #fff;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-box {
+  background: white;
+  width: 100%;
+  max-width: 650px;
+  padding: 20px;
+  border-radius: 22px 22px 0 0;
+  box-shadow: 0 -4px 14px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.popup-list {
+  list-style: none;
+  padding: 0;
+}
+
+.popup-list li {
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  background: #f6f6f6;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 16px solid #fff;
+  margin-bottom: -10px;
+}
+
+
+
+
+/* --- LOGO IMAGE --- */
+.logo-s {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-s img {
+    max-width: 199px;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+.logo-s span {
+    font-size: 12px;
+    font-weight: 400;
+    color: #bdbdbd;
+}
+
+/* --- SIDEBAR MENU  --- */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 20px; 
+}
+
+.sidebar .logo-s {
+  margin-bottom: 10px; 
+}
+
+.sidebar nav {
+  margin-top: 10px; 
+}
+
+.sidebar h3 {
+  margin-top: 10px; 
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+/* Faz a sidebar se comportar como um container flex vertical */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.sidebar .menu {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Empurra o penúltimo link (Configurações) para o final */
+
+.sidebar .menu a[href*="configuracoes"] {
+  margin-top: auto;
+}
+
+
+.sidebar .menu .btn-sair {
+  margin-top: 10px;
+}
+
+
+/* --- CONFIGURAÇÕES LINK POSITIONING --- */
+.sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.configuracoes-link {
+    color: #cfcfcf;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.configuracoes-link.active, 
+.configuracoes-link:hover {
+    background: #222;
+    color: #fff;
+}
+
+
+/* REMOVER FUNDO PERMANENTE E MANTER APENAS HOVER/CLICK */
+.menu a.active {
+    background: transparent;
+    color: #cfcfcf;
+}
+
+.menu a.active:hover {
+    background: #222;
+    color: #fff;
+}
+
+/* --- MAIN CONTENT --- */
+.main-content { margin-left:250px; padding:30px 40px; min-height:100vh; background:#f3f3f3; }
+.page-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; }
+.page-header h1 { font-size:22px; color:#111; }
+.page-header .voltar { text-decoration:none; color:#111; margin-right:10px; font-size:20px; }
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ft-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 40px;
+}
+
+.ft-header h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.back {
+  font-size: 26px;
+  text-decoration: none;
+  color: #000;
+}
+
+.ft-box {
+  background: #ffffff;
+  width: 90%;
+  max-width: 900px;
+
+  /* ✅ Centraliza no meio */
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+
+  /* ✅ Fundo branco igual ao da imagem */
+  border-radius: 16px;
+
+  /* ✅ Borda clara para destacar o bloco */
+  border: 1px solid #e1e1e1;
+
+  /* ✅ Padding exato para o visual da imagem */
+  padding: 35px 45px;
+
+  /* ✅ sombra suave igual da imagem */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.ft-box h2 {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+input, .select {
+  width: 100%;
+  padding: 13px 18px;
+  border-radius: 30px;
+  border: 1px solid #dcdcdc;
+  background: #fafafa;
+  font-size: 14px;
+  outline: none;
+}
+
+.select {
+  cursor: pointer;
+  position: relative;
+}
+
+/* seta do select */
+.select::after {
+  content: "▾";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #555;
+}
+
+.row {
+  display: flex;
+  gap: 22px;
+  margin-top: 15px;
+}
+
+.row div {
+  flex: 1;
+}
+
+.btn-save {
+  width: 260px;
+  margin: 35px auto 0;
+  display: block;
+  padding: 14px;
+  background: #111;
+  color: #fff;
+  border-radius: 30px;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+/* --- OVERRIDES PARA O POPUP ALINHAR AO SELECT --- */
+.popup {
+  position: absolute !important;
+  background: transparent !important;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.popup-box {
+  position: absolute !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  background: #fff;
+  border-radius: 16px;
+}
+
+
+/* --- fundo da página --- */
+body{
+  font-family: "Poppins", sans-serif !important;
+  background:#f2f2f2 !important;
+  color:#111 !important;
+  margin:0 !important;
+}
+
+
+/* --- CARTÃO BRANCO: usa o próprio <form> como container --- */
+form{
+  width:90% !important;
+  max-width:900px !important;
+  margin:0 auto 40px auto !important;   /* centraliza */
+  background:#fff !important;           /* bloco branco atrás */
+  border:1px solid #e1e1e1 !important;  /* borda suave */
+  border-radius:16px !important;
+  padding:35px 45px !important;         /* respiro interno */
+  box-shadow:0 4px 14px rgba(0,0,0,.08) !important;
+}
+
+/* subtítulo central dentro do card, se existir */
+form h2{
+  text-align:center !important;
+  font-size:18px !important;
+  font-weight:600 !important;
+  margin:0 0 25px 0 !important;
+}
+
+/* --- labels e campos --- */
+form label{
+  display:block !important;
+  font-size:14px !important;
+  font-weight:500 !important;
+  margin:15px 0 6px !important;
+}
+
+form input{
+  width:100% !important;
+  padding:13px 18px !important;
+  border:1px solid #dcdcdc !important;
+  border-radius:30px !important;
+  background:#fafafa !important;
+  font-size:14px !important;
+  outline:none !important;
+  color:#444 !important;
+}
+
+form input::placeholder{ color:#aaa !important; }
+
+/* “select” custom, se você estiver usando divs com esse papel */
+.select,[data-type]{
+  width:100% !important;
+  padding:13px 18px !important;
+  border:1px solid #dcdcdc !important;
+  border-radius:30px !important;
+  background:#fff !important;
+  font-size:14px !important;
+  color:#444 !important;
+  position:relative !important;
+  cursor:pointer !important;
+}
+
+/* seta do “select” */
+.select::after,[data-type]::after{
+  content:"▾";
+  position:absolute;
+  right:16px; top:50%;
+  transform:translateY(-50%);
+  font-size:14px; color:#555;
+}
+
+
+/* se você tiver pares em duas colunas (Tecido/Quantidade etc.), isso mantém o layout */
+.row{ display:flex !important; gap:22px !important; margin-top:15px !important; }
+.row > *{ flex:1 !important; }
+
+/* popup (se usar) */
+.popup{ position:fixed; inset:0; background:rgba(0,0,0,.45); display:flex; justify-content:center; align-items:flex-end; }
+.popup.hidden{ display:none; }
+.popup .arrow{ width:0; height:0; border-left:10px solid transparent; border-right:10px solid transparent; border-bottom:14px solid #fff; margin-bottom:-8px; }
+.popup .popup-box{ width:95%; max-width:620px; background:#fff; border-radius:18px 18px 0 0; padding:20px; margin-bottom:60px; box-shadow:0 -4px 16px rgba(0,0,0,.1); }
+.popup .popup-list{ list-style:none; padding:0; margin:0; }
+.popup .popup-list li{ padding:14px 16px; background:#f2f2f2; border:1px solid #ddd; border-radius:14px; font-size:14px; margin-bottom:10px; cursor:pointer; }
+.popup .popup-list li:hover{ background:#e9e9e9; }
+
+

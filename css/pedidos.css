@@ -149,6 +149,31 @@ body { background:#1f1f1f; color:#111; }
 }
 
 
+/* === Botões da de adicionar === */
+.btn-add {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px; /* Cantos menos arredondados - estilo retangular */
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  min-width: 100px; /* Largura mínima para evitar corte de texto */
+  text-align: center;
+  display: inline-block;
+}
+
+.page-header {
+  position: relative;
+}
+.page-header .btn-add {
+  position: absolute;
+  right: 0;   /* fica na direita */
+  top: 50%;   /* fica entre título e subtítulo */
+  transform: translateY(-50%); /* centraliza verticalmente */
+}
+
 
 /* === LAYOUT DE PEDIDOS === */
 
@@ -294,3 +319,7 @@ body { background:#1f1f1f; color:#111; }
   font-size: 18px;
   margin-top: 2px;
 }
+
+
+
+

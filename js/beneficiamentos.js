@@ -4,12 +4,48 @@ document.addEventListener("DOMContentLoaded", function() {
   const searchInput = document.querySelector(".search-bar input");
   const tecidoCards = Array.from(document.querySelectorAll(".beneficiamento-card"));
 
-  // === 1️⃣ BOTÃO ADICIONAR - REDIRECIONA PARA CADASTRO ===
-  if (btnAdicionar) {
-    btnAdicionar.addEventListener("click", () => {
-      window.location.href = "cadastro-beneficiamentos.html";
+
+
+  btnAdicionar.addEventListener("click", (event) => {
+  event.stopPropagation();
+  fecharMenusAbertos();
+
+  const menu = document.createElement("div");
+  menu.classList.add("opcoes-menu");
+  menu.innerHTML = `
+    <button data-link="digital-beneficiamento.html">Digital</button>
+    <button data-link="bordado-beneficiamento.html">Bordado</button>
+    <button data-link="sublimacao-beneficiamento.html">Sublimação</button>
+    <button data-link="serigrafia-beneficiamento.html">Serigrafia</button>
+  `;
+
+  const rect = btnAdicionar.getBoundingClientRect();
+
+  menu.style.position = "absolute";
+  menu.style.top = `${rect.bottom + window.scrollY + 10}px`;
+  menu.style.left = `${rect.right - 150}px`;
+  menu.style.background = "#fff";
+  menu.style.border = "1px solid #ddd";
+  menu.style.borderRadius = "10px";
+  menu.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
+  menu.style.padding = "6px 0";
+  menu.style.zIndex = "1000";
+  menu.style.width = "140px";
+
+  document.body.appendChild(menu);
+
+  // Evento de clique nas opções
+  menu.querySelectorAll("button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const link = btn.dataset.link;
+      window.location.href = link;  // ✅ redireciona
     });
-  }
+  });
+
+  // Fecha ao clicar fora
+  document.addEventListener("click", fecharMenusAbertos, { once: true });
+});
+
 
   // === 2️⃣ MENU DE OPÇÕES (⋯) ===
   menuButtons.forEach(btn => {

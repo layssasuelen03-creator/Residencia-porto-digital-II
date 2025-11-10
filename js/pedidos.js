@@ -143,3 +143,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// === BOTÃO ADICIONAR - IR PARA FICHA TÉCNICA ===
+document.addEventListener("DOMContentLoaded", () => {
+  const btnAdd = document.querySelector(".btn-add");
+
+  if (btnAdd) {
+    btnAdd.addEventListener("click", () => {
+      window.location.href = "fichaTecnica.html";
+    });
+  }
+});
